@@ -4,11 +4,21 @@ class MyException(Exception):
 class ExceptionsDemo:
     
     def divide(self, a, b):
-        result = a / b
-        print("Division result:", result)
+        try:
+            result = a / b
+            print("Division result:", result)
+        except ZeroDivisionError:
+            print('ERROOOOOOOOOOOR AGUAS CUIDADO')
+        except TypeError:
+            print('CUIDADOOOOOOO AGUAS XD')
     
     def access_list(self, lst, index):
-        print("Element:", lst[index])
+        try:
+            print("Element:", lst[index])
+        except IndexError:
+            print('ERRORORORORO INDEX')
+        except TypeError:
+            print('CUIDADOOOOOOO AGUAS XD')
     
     def access_dict(self, dic, key):
         print("Value:", dic[key])
@@ -34,7 +44,7 @@ class MyException(Exception):
 if __name__ == "__main__":
 
     demo = ExceptionsDemo()
-
+    
     demo.divide(10, 0)   
     demo.divide("10", 2)  
 
